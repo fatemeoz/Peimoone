@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import '../CustomStyles.css';
+import '../styles/CustomStyles.css';
 
 export class Home extends Component {
     constructor() {

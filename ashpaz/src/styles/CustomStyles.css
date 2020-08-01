@@ -1,0 +1,12 @@
+.centeredCol {
+    margin: auto;
+}
+
+.row-marg{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.div-right-align{
+    float: right;
+}
