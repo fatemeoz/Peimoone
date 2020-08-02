@@ -8,14 +8,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 dotenv.config();
-mongoose.connect(
-    process.env.DB_SERVER,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    },
-    () => console.log('connected to db')
-);
+// mongoose.connect(
+//     process.env.DB_SERVER,
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true
+//     },
+//     () => console.log('connected to db')
+// );
 
 app.use(cors());
 app.use(bodyParser.urlencoded({
