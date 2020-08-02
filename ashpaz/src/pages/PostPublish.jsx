@@ -14,7 +14,7 @@ function PostPublish() {
             author: "User",
             content: content
         }
-        axios.post('http://localhost:5000/api/save-post', body).then((res) =>{
+        axios.post(`${process.env.REACT_APP_SERVER}/api/save-post`, body).then((res) =>{
             console.log(res);
         });
     }
