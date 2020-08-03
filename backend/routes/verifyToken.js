@@ -6,6 +6,7 @@ function auth(req,res,next){
     try{
         const varified = jwt.verify(Token,process.env.TOKEN_SECRET)
         req.user = varified;
+        next();
     }
     catch(err){
         res.status(400).send('Invalid Token');

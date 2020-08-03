@@ -4,7 +4,7 @@ const app = express();
 const usersAPI = require('./routes/users');
 const api = require('./routes/api');
 const dotenv = require('dotenv');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const cors = require('cors');
 dotenv.config();
 mongoose.connect(
