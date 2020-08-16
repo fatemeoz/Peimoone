@@ -4,6 +4,7 @@ import Nav from "./components/myNavbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PostPublish from './pages/PostPublish';
+import PrivateRoute from './components/PrivateRoute';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
             <Nav />
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path='/publish' component={PostPublish} />
+                <PrivateRoute exact path='/publish' component={PostPublish} />
             </Switch>
         </Router>
     );
