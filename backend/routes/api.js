@@ -14,6 +14,17 @@ router.post('/save-post', auth, async (req, res) => {
     }
 });
 
+router.get('/recipes', async (req, res) => {
+    try {
+        const result = await Post.find({});
+        console.log(result)
+        res.send(result);
+    }
+    catch (err) {
+        console.log(err);
+    }
+});
+
 router.post('/signed-file-url', sign_s3);
 
 module.exports = router;
