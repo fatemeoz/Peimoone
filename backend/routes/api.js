@@ -14,10 +14,10 @@ router.post('/save-post', auth, async (req, res) => {
     }
 });
 
-router.get('/recipes', async (req, res) => {
+router.post('/recipes', async (req, res) => {
     try {
-        const result = await Post.find({});
-        console.log(result)
+        console.log(req.body)
+        const result = await Post.find(req.body);
         res.send(result);
     }
     catch (err) {

@@ -8,7 +8,7 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER}/api/recipes`).then((res) => {
+    axios.post(`${process.env.REACT_APP_SERVER}/api/recipes`, {}).then((res) => {
       setRecipes(res.data);
     }).catch((err) => {
       console.log(err)

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, InputGroup, FormControl, Button } from "react-bootstrap";
 import { useCookies } from "react-cookie";
 import CKEditor from "../components/myCKEditor";
 import axios from "axios";
 import STATUS from "../consts";
+import jwtDecode from "jwt-decode";
 import "../styles/CustomStyles.css";
 import "../styles/CKEditor.css";
 
@@ -18,8 +19,10 @@ function PostPublish(props) {
     });
 
     const savePost = (event) => {
+        console.log()
         const body = {
-            author: "User",
+            title: document.getElementById('recipe-title').value,
+            author: jwtDecode(cookies["auth-token"])._id,
             content: content,
         };
         axios
@@ -49,6 +52,20 @@ function PostPublish(props) {
                     className="ck-content"
                     dangerouslySetInnerHTML={{ __html: content }}
                 ></div>
+            </Row>
+            <Row bsPrefix="row-marg">
+                <Col xs={12}>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="inputGroup-sizing-default">
+                                Title
+                            </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            id='recipe-title'
+                        />
+                    </InputGroup>
+                </Col>
             </Row>
             <Row bsPrefix="row-marg">
                 <Col xs={12}>

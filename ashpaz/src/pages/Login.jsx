@@ -4,12 +4,12 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie';
 import "../styles/CustomStyles.css";
 
-function Home(props) {
+function Login(props) {
     const [cookies, setCookie, removeCookie] = useCookies();
 
     useEffect(() => {
         if (cookies['auth-token']){
-            props.history.push('publish');
+            props.history.push('/posts');
         }
       }, []);
 
@@ -22,7 +22,7 @@ function Home(props) {
             console.log('success')
             if (res.data.token) {
                 setCookie('auth-token', res.data.token);
-                props.history.push('/publish');
+                props.history.push('/posts');
             }
         }).catch((err) => {
             console.log(err)
@@ -67,4 +67,4 @@ function Home(props) {
     );
 }
 
-export default Home;
+export default Login;
