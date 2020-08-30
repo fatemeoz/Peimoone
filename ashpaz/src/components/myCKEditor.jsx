@@ -161,7 +161,7 @@ function myCKEditor(props) {
             <CKEditor
                 editor={ClassicEditor}
                 config={editorConfiguration}
-                data={`<figure class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Test-Logo.svg" alt="..."></figure>`}
+                data={props.init}
                 onInit={(editor) => {
                     // You can store the "editor" and use when it is needed.
                     console.log("Editor is ready to use!", editor);

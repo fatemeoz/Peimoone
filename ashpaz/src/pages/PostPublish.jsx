@@ -70,7 +70,7 @@ function PostPublish(props) {
             <Row bsPrefix="row-marg">
                 <Col xs={12}>
                     <div className="App">
-                        <CKEditor handler={setContent} />
+                        <CKEditor init={'sds'} handler={setContent} />
                     </div>
                 </Col>
             </Row>

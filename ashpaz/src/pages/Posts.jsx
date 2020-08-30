@@ -35,7 +35,7 @@ function Posts(props) {
                     <Button style={{width:'100%'}} onClick={()=>{props.history.push('/publish');}}>Create New Recipe</Button>
                 </Col>
             </Row>
-            <Row bsPrefix="row-marg">
+            <Row>
                 {recipes.map((recipe, i) => (
                     <Col xs={12} md={3} key={i}>
                         <Card>
@@ -46,7 +46,9 @@ function Posts(props) {
                                         }}>
                                     
                                 </Card.Text>
-                                <Button>Edit</Button>
+                                <Link to={`/posts/${recipe._id}`}>
+                                    <Button>Edit</Button>
+                                </Link>
                             </Card.Body>
                         </Card>
                     </Col>
